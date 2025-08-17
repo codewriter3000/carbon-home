@@ -1,0 +1,17 @@
+.notification-info {
+  background-color: #262626;
+  padding: 0.5em;
+  border-radius: 8px;
+  margin: 0.5em 0;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.timestamp {
+  font-weight: bold;
+  color: #888;
+}
+
+.app {
+  text-align: left;
+}

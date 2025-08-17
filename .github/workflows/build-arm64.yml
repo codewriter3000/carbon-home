@@ -1,0 +1,52 @@
+name: Cross-compile for ARM64 Linux
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-arm64:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v1
+
+    - name: Install frontend dependencies
+      run: bun install
+
+    - name: Build frontend
+      run: bun run build
+
+    - name: Setup Rust
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: aarch64-unknown-linux-gnu
+
+    - name: Install cross-compilation dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-aarch64-linux-gnu pkg-config libssl-dev
+
+    - name: Install Tauri CLI
+      run: cargo install tauri-cli
+
+    - name: Build Tauri app for ARM64 Linux
+      run: cargo tauri build --target aarch64-unknown-linux-gnu
+      env:
+        CC_aarch64_unknown_linux_gnu: aarch64-linux-gnu-gcc
+        CXX_aarch64_unknown_linux_gnu: aarch64-linux-gnu-g++
+        AR_aarch64_unknown_linux_gnu: aarch64-linux-gnu-ar
+        CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: aarch64-linux-gnu-gcc
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: carbon-home-arm64-linux
+        path: |
+          src-tauri/target/aarch64-unknown-linux-gnu/release/bundle/
+          src-tauri/target/aarch64-unknown-linux-gnu/release/carbon-home

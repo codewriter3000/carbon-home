@@ -1,0 +1,19 @@
+.swipe-switch {
+  background-color: #0f62fe;
+  height: 48px;
+  width: 300px;
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 16px;
+  transition: background-color 0.35s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.swipe-switch:hover {
+  background-color: #0050e6;
+  transition: background-color 0.35s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
