@@ -4,6 +4,7 @@
     "": {
       "name": "carbon-home",
       "dependencies": {
+        "@neodrag/solid": "^2.3.1",
         "@tauri-apps/api": "^2",
         "@tauri-apps/plugin-opener": "^2",
         "solid-js": "^1.9.3",
@@ -114,6 +115,8 @@
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.5", "", {}, "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og=="],
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.30", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q=="],
+
+    "@neodrag/solid": ["@neodrag/solid@2.3.1", "", { "peerDependencies": { "solid-js": "^1.0.0" } }, "sha512-oLuB+0yrB27RR7R41dKjdmNbPGgAIeyCHokH5bj1LXcTJKnlKAa0/V9ijfVLo+MQuP8XlX5T62TVhmKnUVoJWA=="],
 
     "@rollup/rollup-android-arm-eabi": ["@rollup/rollup-android-arm-eabi@4.46.2", "", { "os": "android", "cpu": "arm" }, "sha512-Zj3Hl6sN34xJtMv7Anwb5Gu01yujyE/cLBDB2gnHTAHaWS1Z38L7kuSG+oAh0giZMqG060f/YBStXtMH6FvPMA=="],
 

@@ -14,11 +14,8 @@ const Notification = ({
   return (
     <div class={`notification-${type}`}>
         <h3 class="app">{app}</h3>
-        <div style="display: flex;
-    flex-direction: row;">
-            <span class="timestamp">{timestamp}</span>&nbsp;
-            <span class="message">{message}</span>
-        </div>
+				<div class="timestamp">{timestamp}</div>
+        <div class="message">{message}</div>
     </div>
   );
 };

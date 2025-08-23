@@ -1,6 +1,7 @@
 import SwipeSwitch from "../components/SwipeSwitch/SwipeSwitch";
 import arrowRightIcon from "../assets/icons/arrowRight.svg";
 import Notification from "../components/Notification/Notification";
+import MoreNotifications from "../components/Notification/MoreNotifications";
 
 const LockScreen = () => {
   const notifications = [
@@ -31,10 +32,12 @@ const LockScreen = () => {
         height: 80vh; width: 100vw;
         background-color: #161616;"
     >
-      <h1 class="light" style="font-size: 6rem;">
-        2:14AM
-      </h1>
-
+			<div>
+				<h2 class="light">Tues Aug 19</h2>
+      	<h1 class="light" style="font-size: 6rem; font-weight: 100;">
+        	2:14AM
+      	</h1>
+			</div>
         <div class="notifications">
             {notifications.map((notification) => (
                 <Notification
@@ -44,10 +47,13 @@ const LockScreen = () => {
                     type={notification.type}
                 />
             ))}
+						<MoreNotifications />
         </div>
 
       {/* Additional lock screen components can be added here */}
-      <SwipeSwitch text="Swipe to Unlock" icon={arrowRightIcon} />
+      <SwipeSwitch text="Swipe to Unlock" icon={arrowRightIcon}
+				onSwipe={() => console.log('swipe')}
+			/>
     </div>
   );
 };
