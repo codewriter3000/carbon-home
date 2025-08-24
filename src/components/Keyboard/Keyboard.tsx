@@ -194,6 +194,6 @@ const KeyboardSymbols = () => {
 
 
 
-const Keyboard = () => <KeyboardSymbols />;
+const Keyboard = () => <KeyboardLowerCase />;
 
 export default Keyboard;
