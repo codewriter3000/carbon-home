@@ -1,22 +1,17 @@
 import { createSignal } from 'solid-js';
 import { StackRouterProvider, useStackRouter } from '../../hooks/StackRouter.tsx';
-
-const SettingsNavButton = ({name, screen}) => {
-	const { push, pop } = useStackRouter();
-
-	return (
-		<div onClick={() => push(screen)} style="background-color: #262626; border-radius: 20px; margin: 10px; height: 50px; font-size: 20px; align-content: center;">
-			{name}
-		</div>
-	)
-};
+import Label from '../../components/Label/Label.tsx';
+import SettingsNavButton from './SettingsNavButton.tsx';
+import Button from '../../components/Button/Button.tsx';
 
 const Settings = () => {
 	const { push, pop } = useStackRouter();
 
 	return (
 		<div>
-			<div style="text-decoration: underline; color: white;" onClick={() => pop()}>Back</div>
+			<Button kind="link" text="Back" onClick={() => {
+				pop();
+			}} />
 			<h1>Settings</h1>
 			<SettingsNavButton name="System and Security" screen={<SystemAndSecurity />} />
 			<SettingsNavButton name="Network and Internet" />
@@ -42,19 +37,6 @@ const SystemAndSecurity = () => {
 			<SettingsNavButton name="Backup and Restore" />
 			<SettingsNavButton name="Drive Encryption" />
 			<SettingsNavButton name="Administrative Tools" />
-		</div>
-	)
-}
-
-const Label = ({ property, value, triggerRed }) => {
-	return (
-		<div style="display: flex; flex-direction: column;">
-			<div style="color: #8d8d8d;">
-				{property}
-			</div>
-			<div style={`color: ${triggerRed ? "#fa4d56" : "inherit"};`}>
-				{value}
-			</div>
 		</div>
 	)
 }

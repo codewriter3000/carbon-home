@@ -1,31 +1,35 @@
 import { For } from "solid-js";
 
-import filesIcon from "../assets/icons/archive.svg";
-import booksIcon from "../assets/icons/book.svg";
-import calendarIcon from "../assets/icons/calendar.svg";
-import notesIcon from "../assets/icons/stickies.svg";
-import calculatorIcon from "../assets/icons/calculator.svg";
-import cameraIcon from "../assets/icons/camera.svg";
-import smsIcon from "../assets/icons/chat.svg";
-import weatherIcon from "../assets/icons/cloudy.svg";
-import compassIcon from "../assets/icons/compass.svg";
-import emailIcon from "../assets/icons/email.svg";
-import contactsIcon from "../assets/icons/events.svg";
-import bankingIcon from "../assets/icons/finance.svg";
-import webBrowserIcon from "../assets/icons/globe.svg";
-import photosIcon from "../assets/icons/image.svg";
-import gpsTrackerIcon from "../assets/icons/location.svg";
-import magnifierIcon from "../assets/icons/magnify.svg";
-import mapIcon from "../assets/icons/map.svg";
-import musicIcon from "../assets/icons/music.svg";
-import phoneIcon from "../assets/icons/phone.svg";
-import voiceRecorderIcon from "../assets/icons/recording.svg";
-import rssIcon from "../assets/icons/rss.svg";
-import rulerIcon from "../assets/icons/ruler.svg";
-import settingsIcon from "../assets/icons/settings.svg";
-import debianStoreIcon from "../assets/icons/store.svg";
-import clockIcon from "../assets/icons/time.svg";
-import videoChatIcon from "../assets/icons/video--chat.svg";
+import {
+  filesIcon,
+  booksIcon,
+  calendarIcon,
+  notesIcon,
+  calculatorIcon,
+  cameraIcon,
+  smsIcon,
+  weatherIcon,
+  compassIcon,
+  emailIcon,
+  contactsIcon,
+  bankingIcon,
+  webBrowserIcon,
+  photosIcon,
+  gpsTrackerIcon,
+  magnifierIcon,
+  mapIcon,
+  musicIcon,
+  phoneIcon,
+  voiceRecorderIcon,
+  rssIcon,
+  rulerIcon,
+  settingsIcon,
+  debianStoreIcon,
+  clockIcon,
+  videoChatIcon,
+} from "../../assets/icons";
+
+import IconButton from './IconButton';
 
 const HomeScreen = () => {
 	const mainApps = [
@@ -60,10 +64,7 @@ const HomeScreen = () => {
 		<div style="margin-left: auto; margin-right: auto; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(6, 1fr); row-gap: 1rem; column-gap: 2.75rem;">
 			<For each={mainApps}>
 			{app => (
-				<div class="app" style="height: 70px; width: 32px; display: flex; flex-direction: column; align-items: center; pointer: cursor;">
-					<img src={app.icon} />
-					<span style="line-height: normal;">{app.name}</span>
-				</div>
+				<IconButton name={app.name} icon={app.icon} />
 			)}
 			</For>
 		</div>

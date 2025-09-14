@@ -1,4 +1,4 @@
-import { createSignal, createContext, useContext, JSX, ParentComponent } from 'solid-js';
+import { children, onMount, createSignal, createContext, useContext, JSX, ParentComponent } from 'solid-js';
 
 type Screen = JSX.Element;
 
@@ -12,6 +12,16 @@ type RouterAPI = {
 const RouterCtx = createContext<RouterAPI>();
 
 export const StackRouterProvider: ParentComponent = (props) => {
+	/*const resolvedChildren = children(() => props.children);
+
+	onMount(() => {
+		if (Array.isArray(resolvedChildren()) && resolvedChildren().length > 1) {
+			throw new Error('There should only be 1 child within the StackRouterProvider');
+		}
+
+		console.log('screen: ' + stack()[stack().length - 1]);
+	}); */
+
   const [stack, setStack] = createSignal<Screen[]>([]);
 
   const api: RouterAPI = {

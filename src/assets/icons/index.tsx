@@ -1,0 +1,27 @@
+export { default as filesIcon } from "./archive.svg";
+export { default as booksIcon } from "./book.svg";
+export { default as calendarIcon } from "./calendar.svg";
+export { default as notesIcon } from "./stickies.svg";
+export { default as calculatorIcon } from "./calculator.svg";
+export { default as cameraIcon } from "./camera.svg";
+export { default as smsIcon } from "./chat.svg";
+export { default as weatherIcon } from "./cloudy.svg";
+export { default as compassIcon } from "./compass.svg";
+export { default as emailIcon } from "./email.svg";
+export { default as contactsIcon } from "./events.svg";
+export { default as bankingIcon } from "./finance.svg";
+export { default as webBrowserIcon } from "./globe.svg";
+export { default as photosIcon } from "./image.svg";
+export { default as gpsTrackerIcon } from "./location.svg";
+export { default as magnifierIcon } from "./magnify.svg";
+export { default as mapIcon } from "./map.svg";
+export { default as musicIcon } from "./music.svg";
+export { default as phoneIcon } from "./phone.svg";
+export { default as voiceRecorderIcon } from "./recording.svg";
+export { default as rssIcon } from "./rss.svg";
+export { default as rulerIcon } from "./ruler.svg";
+export { default as settingsIcon } from "./settings.svg";
+export { default as debianStoreIcon } from "./store.svg";
+export { default as clockIcon } from "./time.svg";
+export { default as videoChatIcon } from "./video--chat.svg";
+
