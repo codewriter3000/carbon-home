@@ -10,11 +10,11 @@ function App() {
 
   return (
     <main class="container">
-			{/*<StackRouterProvider>*/}
+			<StackRouterProvider>
 				<HomeScreen />
       	{/*<SMS />
 				<Keyboard />*/}
-			{/*</StackRouterProvider>*/}
+			</StackRouterProvider>
     </main>
   );
 }
